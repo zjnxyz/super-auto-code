@@ -1,0 +1,15 @@
+package ${entity.packageName};
+
+<#list entity.importList as imp >
+import ${imp};
+</#list> 
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+public interface ${entity.className} extends ${entity.superName}{
+
+	
+	
+}

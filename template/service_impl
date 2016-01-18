@@ -1,0 +1,16 @@
+package ${entity.packageName};
+
+import org.springframework.stereotype.Service;
+<#list entity.importList as imp >
+import ${imp};
+</#list>
+ 
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+@Service("${entity.annoName}")
+public class ${entity.className} implements ${entity.interfaceName}{
+
+}

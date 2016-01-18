@@ -1,0 +1,31 @@
+package ${entity.packageName};
+
+<#list entity.importList as imp >
+import ${imp};
+</#list>  
+
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+public class ${entity.className} {
+
+<#list entity.fieldSources as pro>
+
+    // ${pro.fieldNote}
+    private ${pro.typeClass} ${pro.fieldName};  
+</#list>  
+
+<#list entity.fieldSources as pro>	
+
+     public void ${pro.setterMethodName}(${pro.typeClass} ${pro.fieldName}){  
+	      this.${pro.fieldName} = ${pro.fieldName};  
+     }
+     
+     public ${pro.typeClass} ${pro.getterMethodName}(){  
+	      return this.${pro.fieldName};  
+     } 
+</#list> 
+	
+}

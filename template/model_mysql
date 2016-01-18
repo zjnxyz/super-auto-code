@@ -1,0 +1,47 @@
+package ${entity.packageName};
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+<#list entity.importList as imp >
+import ${imp};
+</#list>  
+
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+@Entity
+@Table(name = "${entity.tableName}")
+public class ${entity.className} {
+
+<#list entity.fieldSources as pro>
+
+    <#if pro.fieldName == "id">
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private ${pro.typeClass} ${pro.fieldName};      
+    <#else>
+    // ${pro.fieldNote}
+    @Column(name = "${pro.columnName}")
+    private ${pro.typeClass} ${pro.fieldName};      
+    </#if>  
+</#list>  
+
+<#list entity.fieldSources as pro>	
+
+     public void ${pro.setterMethodName}(${pro.typeClass} ${pro.fieldName}){  
+	      this.${pro.fieldName} = ${pro.fieldName};  
+     }
+     
+     public ${pro.typeClass} ${pro.getterMethodName}(){  
+	      return this.${pro.fieldName};  
+     } 
+</#list> 
+	
+}

@@ -1,0 +1,13 @@
+package ${entity.packageName};
+
+
+/**
+ * 对外接口
+ * @author super_auto_code
+ *
+ */
+public interface ${entity.className} {
+	
+	
+	
+}

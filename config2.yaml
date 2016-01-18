@@ -1,0 +1,51 @@
+--- 
+prePackage: cn.friday.mall.service
+supportRedis: false
+writeReadSep: true
+provider: false
+entityClasses: 
+  - 
+    className: RefundBill
+    curPackageName: pay
+    tableName: mall_refund_bill
+    field: 
+      - 
+        propertyName: id
+        tableColumnName: id
+        typeClass: long
+        fieldNote: 主键
+      - 
+        propertyName: orderId
+        tableColumnName: order_id
+        typeClass: long
+        fieldNote: 订单id
+      - 
+        propertyName: outRefundNo
+        tableColumnName: out_refund_no
+        typeClass: String
+        fieldNote: 退款单号
+      - 
+        propertyName: refundId
+        tableColumnName: refund_id
+        typeClass: String
+        fieldNote: 微信退款流水号
+      - 
+        propertyName: refundFee
+        tableColumnName: refund_fee
+        typeClass: int
+        fieldNote: 退款金额
+      - 
+        propertyName: studentId
+        tableColumnName: student_id
+        typeClass: long
+        fieldNote: 操作人id
+      - 
+        propertyName: status
+        tableColumnName: status
+        typeClass: int
+        fieldNote: 退款状态:0失败，1成功，2正在进行中
+      -
+        propertyName: addTime
+        tableColumnName: add_time
+        typeClass: java.util.Date
+        fieldNote: 添加时间

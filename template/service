@@ -1,0 +1,12 @@
+package ${entity.packageName};
+
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+public interface ${entity.className} {
+
+	
+	
+}

@@ -1,0 +1,40 @@
+package ${entity.packageName};
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
+import cn.friday.base.service.global.redis.dao.impl.BaseHashRedisDaoImpl;
+import cn.friday.base.service.global.redis.mapper.IBaseRedisMapper;
+<#list entity.importList as imp >
+import ${imp};
+</#list>
+
+/**
+ *
+ * @author super_auto_code
+ *
+ */
+@Component("${entity.annoName}")
+public class ${entity.className} extends BaseHashRedisDaoImpl<${entity.superName}> implements ${entity.interfaceName}{
+
+	@Autowired
+	StringRedisTemplate stringRedisTemplate;
+
+	@Autowired
+	${entity.mapperClassName} mapper;
+	
+	public ${entity.className}() {
+		super(${entity.superName}.class);
+	}
+
+	@Override
+	public IBaseRedisMapper<${entity.superName}> getBaseRedisMapper() {
+		return mapper;
+	}
+
+	@Override
+	public StringRedisTemplate stringRedisTemplate() {
+		return stringRedisTemplate;
+	}
+
+}
